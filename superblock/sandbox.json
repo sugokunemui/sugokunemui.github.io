@@ -4,7 +4,7 @@
 		"type":"block"
 	},
 	"trigger":{  
-		"url-filter":"https?://sugokunemui\\.github\\.io/superblock/.+"
+		"url-filter":"https?://sugokunemui\\.github\\.io/superblock/iframe.+\\.html"
 	}
 }, 
 {
@@ -20,6 +20,15 @@
 	"action": {
 		"type": "css-display-none",
 		"selector": ".class3"
+	},
+	"trigger": {
+		"url-filter": ".*"
+	}
+}, 
+{
+	"action": {
+		"type": "css-display-none",
+		"selector": "div[class*='class']"
 	},
 	"trigger": {
 		"url-filter": ".*"
