@@ -1,0 +1,1 @@
+document.write("popup_ad.jsを読み込みました")
