@@ -4,7 +4,8 @@
 		"type":"block"
 	},
 	"trigger":{  
-		"url-filter":"advertise"
+		"url-filter":"advertise",
+        "resource-type": ["script"]
 	}
 }, 
 {
