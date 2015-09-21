@@ -4,13 +4,31 @@
 		"type":"block"
 	},
 	"trigger":{  
-		"url-filter":".+/pop\\.js"
+		"url-filter":"https?://sugokunemui\\.github\\.io/superblock/.+"
 	}
 }, 
 {
 	"action": {
 		"type": "css-display-none",
 		"selector": "iframe"
+	},
+	"trigger": {
+		"url-filter": ".*"
+	}
+}, 
+{
+	"action": {
+		"type": "css-display-none",
+		"selector": ".class3"
+	},
+	"trigger": {
+		"url-filter": ".*"
+	}
+}, 
+{
+	"action": {
+		"type": "css-display-none",
+		"selector": "#id2"
 	},
 	"trigger": {
 		"url-filter": ".*"
