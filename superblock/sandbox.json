@@ -1,0 +1,19 @@
+[
+{  
+	"action":{  
+		"type":"block"
+	},
+	"trigger":{  
+		"url-filter":".+/pop\\.js"
+	}
+}, 
+{
+	"action": {
+		"type": "css-display-none",
+		"selector": "iframe"
+	},
+	"trigger": {
+		"url-filter": ".*"
+	}
+}
+]
