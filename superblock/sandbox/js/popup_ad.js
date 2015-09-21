@@ -1,1 +1,1 @@
-document.write("popup_ad.jsを読み込みました")
+document.write("<p>popup_ad.jsを読み込みました</p>")
