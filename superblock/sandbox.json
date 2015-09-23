@@ -29,15 +29,6 @@
 {
 	"action": {
 		"type": "css-display-none",
-		"selector": "div[class*='class']"
-	},
-	"trigger": {
-		"url-filter": ".*"
-	}
-}, 
-{
-	"action": {
-		"type": "css-display-none",
 		"selector": "#id2"
 	},
 	"trigger": {
