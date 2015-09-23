@@ -9,7 +9,7 @@
 		"type":"block"
 	},
 	"trigger":{  
-		"url-filter":".+/pop\\.js"
+		"url-filter":".+/pop\\.js",
 	}
 }, 
 {  
@@ -25,15 +25,24 @@
 		"type":"block"
 	},
 	"trigger":{  
-		"url-filter":".+/ad/.+"
+		"url-filter":".+/popup\\.js"
 	}
-}, 
+},
 {  
 	"action":{  
 		"type":"block"
 	},
 	"trigger":{  
-		"url-filter":".+/popup\\.js"
+		"url-filter":".+/ad/.+"
+	}
+}, 
+{
+	"action": {
+		"type": "css-display-none",
+		"selector": "div[id*='imobile_adspot']"
+	},
+	"trigger": {
+		"url-filter": ".*"
 	}
 },
 {
@@ -139,6 +148,33 @@
 	"action": {
 		"type": "css-display-none",
 		"selector": "a[href*='black-diamond.asia']"
+	},
+	"trigger": {
+		"url-filter": ".*"
+	}
+},
+{
+	"action": {
+		"type": "css-display-none",
+		"selector": "a[href*='burning-phoenix.kir.jp']"
+	},
+	"trigger": {
+		"url-filter": ".*"
+	}
+},
+{
+	"action": {
+		"type": "css-display-none",
+		"selector": "a[href*='ad.aspm.jp']"
+	},
+	"trigger": {
+		"url-filter": ".*"
+	}
+},
+{
+	"action": {
+		"type": "css-display-none",
+		"selector": "a[href*='ac-max.kir.jp']"
 	},
 	"trigger": {
 		"url-filter": ".*"
