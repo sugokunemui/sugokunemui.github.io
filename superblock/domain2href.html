@@ -1,14 +1,34 @@
 <html>
 <body>
 <p><textarea id="domain"></textarea></p>
-<p><button>convert</button></p>
+<p><button onclick="convert()">convert</button></p>
 <p><textarea id="filters"></textarea></p>
 <script type="text/javascript">
+var filter = function(domain){
+	var f = {
+		"action": {
+			"type": "css-display-none"
+		},
+		"trigger": {
+			"url-filter": ".*"
+		}
+	};
+	f.selector = "a[href*='" + domain + "']";
+	return f;
+}
 var convert = function(){
-	var domainTextarea = document.getElementById("domain");
+	var domainText = document.getElementById("domain").value;
 	var filtersTextarea = document.getElementById("filters");
-	console.log(domainTextarea)
+	console.log(domainText)
 	console.log(filtersTextarea)
+
+	domains = domainText.split(/\r\n|\r|\n/);
+	result = [];
+	for (i = 0; i < domains.length; i++) {
+		result.push(filter(domains[i]));
+	}
+	var resultText = window.JSON.stringify(result);
+	filtersTextarea.value = resultText;
 }
 </script>
 </body>
