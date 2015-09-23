@@ -13,7 +13,7 @@ var filter = function(domain){
 			"url-filter": ".*"
 		}
 	};
-	f.selector = "a[href*='" + domain + "']";
+	f.action.selector = "a[href*='" + domain + "']";
 	return f;
 }
 var convert = function(){
