@@ -20,7 +20,7 @@
 {
 	"action": {
 		"type": "css-display-none",
-		"selector": ".class3"
+		"selector": "div[class$='Ad']"
 	},
 	"trigger": {
 		"url-filter": ".*"
