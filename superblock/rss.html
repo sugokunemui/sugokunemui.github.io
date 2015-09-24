@@ -2,82 +2,15 @@
 <head></head>
 <body>
 	<div>
-	<textarea style="width:100%;height:100%;">
-[
-{  
-	"action":{  
-		"type":"block"
-	},
-	"trigger":{  
-		"url-filter":".+rss.+",
-        "resource-type": ["script", "document", "raw"]
-	}
-}, 
-{
-	"action": {
-		"type": "css-display-none",
-		"selector": "div[id*='rss']"
-	},
-	"trigger": {
-		"url-filter": ".*"
-	}
-},
-{
-	"action": {
-		"type": "css-display-none",
-		"selector": "div[class*='rss']"
-	},
-	"trigger": {
-		"url-filter": ".*"
-	}
-},
-{
-	"action": {
-		"type": "css-display-none",
-		"selector": "a[href*='2ch-c.net']"
-	},
-	"trigger": {
-		"url-filter": ".*"
-	}
-},
-{
-	"action": {
-		"type": "css-display-none",
-		"selector": "a[href*='get2ch.net']"
-	},
-	"trigger": {
-		"url-filter": ".*"
-	}
-},
-{
-	"action": {
-		"type": "css-display-none",
-		"selector": "a[href*='matomeantena.com']"
-	},
-	"trigger": {
-		"url-filter": ".*"
-	}
-},
-{
-	"action": {
-		"type": "css-display-none",
-		"selector": "a[href*='moudamepo.com']"
-	},
-	"trigger": {
-		"url-filter": ".*"
-	}
-},
-{
-	"action": {
-		"type": "css-display-none",
-		"selector": "a[href*='newmofu.doorblog.jp']"
-	},
-	"trigger": {
-		"url-filter": ".*"
-	}
-}
-]
-	</textarea>
+	<textarea style="width:100%;height:100%;" id="textarea"></textarea>
 	</div>
-</body>
+	<script type="text/javascript" src="superagent.js"></script>
+	<script type="text/javascript">
+		superagent
+		.get("https://raw.githubusercontent.com/sugokunemui/adblock/master/rss.json")
+		.end(function(err, res){
+			document.getElementById("textarea").value = res.text;
+		});
+	</script>
+	</body>
 </html>
