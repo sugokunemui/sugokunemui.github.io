@@ -19,20 +19,28 @@
 			return f;
 		}
 		var filters = [];
+		var map = {};
 		superagent
 		.get("https://raw.githubusercontent.com/sugokunemui/adblock/master/adult.min.json")
-		.type("form")
 		.end(function(err, res){
-			console.dir(res);
-		});
-		superagent
-		.get("https://raw.githubusercontent.com/sugokunemui/adblock/master/domain.txt")
-		.end(function(err, res){
-			domains = domainText.split(/\r\n|\r|\n/);
-			result = [];
-			for (i = 0; i < domains.length; i++) {
-				result.push(filter(domains[i]));
+			var arr = window.JSON.parse(res.text);
+			for(var i in arr){
+				var filter = arr[i];
+				filters.push(filter);
+				if(filter.action.type == "css-display-none"){
+					
+				}
 			}
+			superagent
+			.get("https://raw.githubusercontent.com/sugokunemui/adblock/master/domain.txt")
+			.end(function(err, res){
+				domains = res.text.split(/\r\n|\r|\n/);
+				result = [];
+				for (i = 0; i < domains.length; i++) {
+					filters.push(filter(domains[i]));
+				}
+				document.getElementById("textarea").value = filters;
+			});
 		});
 	</script>
 </body>
