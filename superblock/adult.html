@@ -23,12 +23,12 @@
 		superagent
 		.get("https://raw.githubusercontent.com/sugokunemui/adblock/master/adult.min.json")
 		.end(function(err, res){
-			var arr = JSON.parse(res.text);
+			var arr = JSON.parse(res.text.replace(/\s/, ""));
 			for(var i in arr){
 				var f = arr[i];
 				filters.push(f);
 				if(f.action.type == "css-display-none"){
-
+					map[f.action.selector] = true;
 				}
 			}
 			superagent
@@ -37,9 +37,13 @@
 				domains = res.text.split(/\r\n|\r|\n/);
 				result = [];
 				for (i = 0; i < domains.length; i++) {
-					filters.push(filter(domains[i]));
+					var f = filter(domains[i]);
+					if(map[f.action.selector]){
+						//continue;
+					}
+					filters.push(f);
 				}
-				document.getElementById("textarea").value = filters;
+				document.getElementById("textarea").value = JSON.stringify(filters);
 			});
 		});
 	</script>
