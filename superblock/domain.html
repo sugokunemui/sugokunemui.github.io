@@ -328,8 +328,12 @@ content.yieldmanager.edgesuite.net
 	</div>
 	<script type="text/javascript" src="superagent.js"></script>
 	<script type="text/javascript">
-
+		superagent
+		.get("https://raw.githubusercontent.com/sugokunemui/adblock/master/domain.txt")
+		.end(function(err, res){
+			console.log(res)
+		});
 
 	</script>
-</body>
+	</body>
 </html>
