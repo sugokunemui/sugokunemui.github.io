@@ -23,12 +23,12 @@
 		superagent
 		.get("https://raw.githubusercontent.com/sugokunemui/adblock/master/adult.min.json")
 		.end(function(err, res){
-			var arr = window.JSON.parse(res.text);
+			var arr = JSON.stringify(res.text);
 			for(var i in arr){
-				var filter = arr[i];
-				filters.push(filter);
-				if(filter.action.type == "css-display-none"){
-					
+				var f = arr[i];
+				filters.push(f);
+				if(f.action.type == "css-display-none"){
+
 				}
 			}
 			superagent
