@@ -23,7 +23,7 @@
 		superagent
 		.get("https://raw.githubusercontent.com/sugokunemui/adblock/master/adult.min.json")
 		.end(function(err, res){
-			var arr = JSON.parse(res.text.replace(/\s/, ""));
+			var arr = JSON.parse(res.text);
 			for(var i in arr){
 				var f = arr[i];
 				filters.push(f);
