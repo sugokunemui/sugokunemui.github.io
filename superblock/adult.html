@@ -43,7 +43,7 @@
 					}
 					filters.push(f);
 				}
-				document.getElementById("textarea").value = JSON.stringify(filters);
+				document.getElementById("textarea").value = JSON.stringify(filters, null, "\t");
 			});
 		});
 	</script>
